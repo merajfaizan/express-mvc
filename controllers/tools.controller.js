@@ -15,7 +15,16 @@ module.exports.getToolDetail = async (req, res) => {
   console.log(id);
   const filter = { _id: id };
   const foundTool = tools.find((tool) => tool.id == Number(id));
-  res.send(foundTool);
+  res.status(200).send({
+    success: true,
+    message: "success",
+    data: foundTool,
+  });
+
+  // res.status(500).send({
+  //   status: false,
+  //   error: "internal server error",
+  // });
 };
 
 module.exports.saveATool = async (req, res) => {
