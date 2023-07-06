@@ -44,6 +44,8 @@ router
 
 router
   .route("/:id")
-  .get(viewCount, limiter, toolsController.getToolDetail);
+  .get(viewCount, limiter, toolsController.getToolDetail)
+  .patch(toolsController.updateTool)
+  .delete(toolsController.deleteTool);
 
 module.exports = router;
